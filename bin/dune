@@ -1,8 +1,8 @@
 (executable
     (name main)
-    (libraries yourlibname)
+    (libraries cohttp lwt cohttp-lwt-unix npi_response yojson)
     (preprocess (pps ppx_deriving.show)))
 
 (install
     (section bin)
-    (files (main.exe as yourbinname)))
+    (files (main.exe as maskmatch-npi-verifier)))

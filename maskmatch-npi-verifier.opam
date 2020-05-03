@@ -1,0 +1,20 @@
+opam-version: "2.0"
+version: "1.0"
+maintainer: "arulselvan1234@example.com"
+authors: ["ArulselvanMadhavan"]
+homepage: "https://github.com/ArulselvanMadhavan/maskmatch-npi-verifier"
+bug-reports: "https://github.com/ArulselvanMadhavan/maskmatch-npi-verifier/issues"
+dev-repo: "git+https://github.com/ArulselvanMadhavan/maskmatch-npi-verifier.git"
+license: "MIT"
+synopsis: "A short description"
+description: "A longer description"
+doc: "https://github.com/ArulselvanMadhavan/maskmatch-npi-verifier"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+    "dune" {>= "2.0"}
+    "ocaml"
+    "ppx_deriving"
+    "alcotest" {test}
+]

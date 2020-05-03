@@ -1,0 +1,17 @@
+* MaskMatch NPI verifier
+
+** Libraries
+   - cohttp
+   - merlin
+   - ocamlformat
+   - utop
+   - lwt
+   - cohttp-lwt-unix
+   - odig
+   - odoc
+   - lwt_ssl
+   - atdgen
+   - yojson
+** TODO
+   - Body to Json
+   - Generate opam from dune

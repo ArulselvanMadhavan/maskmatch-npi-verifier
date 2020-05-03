@@ -1,4 +1,4 @@
 (library
- (name yourlibname)
- (public_name yourlibname)
+ (name npi_verifier)
+ (libraries npi_response)
  (preprocess (pps ppx_deriving.show)))

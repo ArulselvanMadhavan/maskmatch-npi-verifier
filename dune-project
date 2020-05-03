@@ -1,9 +1,9 @@
 (lang dune 2.0)
-(name yourpackagename)
-(source (github yourprofile/yourpackagename))
+(name maskmatch-npi-verifier)
+(source (github ArulselvanMadhavan/maskmatch-npi-verifier))
 (license MIT)
-(authors "You")
-(maintainers "youremail@example.com")
+(authors "ArulselvanMadhavan")
+(maintainers "arulselvan1234@gmail.com")
 
 (package
-    (name yourpackagename))
+    (name maskmatch-npi-verifier))

@@ -1,0 +1,15 @@
+type npi_response = {
+  result_count : int;
+  results : result list
+}
+
+type result = {
+  number : int;
+  basic : basic
+}
+
+type basic = {
+  first_name : string;
+  last_name : string;
+  name: string
+}

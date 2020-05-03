@@ -1,0 +1,15 @@
+(library
+  (name npi_response)
+  (libraries atdgen))
+
+(rule
+  (targets npi_t.ml
+           npi_t.mli)
+  (deps npi.atd)
+  (action (run atdgen -t %{deps})))
+
+(rule
+  (targets npi_j.ml
+           npi_j.mli)
+  (deps npi.atd)
+  (action (run atdgen -j -j-std %{deps})))

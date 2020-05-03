@@ -1,4 +1,3 @@
-open Yourlibname
 module A = Alcotest
 
 let test_case = ()
