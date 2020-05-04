@@ -12,6 +12,9 @@
    - lwt_ssl
    - atdgen
    - yojson
+   - csv
+   - csv-lwt
+   - csvtool
 ** TODO
-   - Body to Json
+   - csv rows header -> type
    - Generate opam from dune
