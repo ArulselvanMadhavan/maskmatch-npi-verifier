@@ -9,7 +9,7 @@ type result = {
 }
 
 type basic = {
-  first_name : string;
-  last_name : string;
+  first_name : string option;
+  last_name : string option;
   name: string
 }
