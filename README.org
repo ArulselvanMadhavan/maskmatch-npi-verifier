@@ -5,7 +5,16 @@
    #+END_SRC
 ** Installation
    #+BEGIN_SRC bash
-   dune install
+   # Install opam first
+   https://opam.ocaml.org/doc/Install.html
+   # Clone the repo
+   git clone <this_repo>
+   # Install an opam switch (similar to pipenv)
+   opam switch create . ocaml-base-compiler.4.10.0
+   # Install build manager
+   opam install dune
+   # Final step: Install the tool
+   dune build @install
    #+END_SRC
 ** Libraries
    - cohttp
@@ -22,6 +31,3 @@
    - csv
    - csv-lwt
    - csvtool
-** TODO
-   - csv rows header -> type
-   - Generate opam from dune
