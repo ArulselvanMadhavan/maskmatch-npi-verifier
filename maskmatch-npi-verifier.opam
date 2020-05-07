@@ -16,5 +16,16 @@ depends: [
     "dune" {>= "2.0"}
     "ocaml"
     "ppx_deriving"
+    "cohttp"
+    "ocamlformat"
+    "lwt"
+    "cohttp-lwt-unix"
+    "odig"
+    "lwt_ssl"
+    "atdgen"
+    "yojson"
+    "csv"
+    "csv-lwt"
+    "csvtool"
     "alcotest" {test}
 ]

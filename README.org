@@ -1,5 +1,12 @@
 * MaskMatch NPI verifier
-
+** Usage
+   #+BEGIN_SRC bash
+   maskmatch-npi-verifier <path_to_input_file.csv> <path_to_output_file.csv>
+   #+END_SRC
+** Installation
+   #+BEGIN_SRC bash
+   dune install
+   #+END_SRC
 ** Libraries
    - cohttp
    - merlin

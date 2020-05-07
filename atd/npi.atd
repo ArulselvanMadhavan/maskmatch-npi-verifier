@@ -5,11 +5,13 @@ type npi_response = {
 
 type result = {
   number : int;
-  basic : basic
+  ?basic : basic option
 }
 
 type basic = {
-  first_name : string option;
-  last_name : string option;
-  name: string
+  ?first_name : string option;
+  ?authorized_official_first_name: string option;
+  ?last_name : string option;
+  ?authorized_official_last_name: string option;
+  name : string
 }
