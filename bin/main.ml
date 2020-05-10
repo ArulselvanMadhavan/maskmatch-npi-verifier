@@ -101,7 +101,7 @@ let process_row (csv_outc : Csv.out_channel) row =
   let final_result = Base.Option.fold validation_result ~init:false ~f:(fun _ a -> a) in
   if final_result
   then (
-    let _ = Csv.output_record csv_outc (Csv.Row.to_list row) in
+    let _ = Csv.output_record csv_outc ((Csv.Row.get row 0) :: []) in
     print_endline (Printf.sprintf "Validation Succeeded for %s" @@ validation_data_field))
   else if Base.Option.is_some npi_opt
   then
@@ -115,8 +115,13 @@ let parse_csv input_file_path output_file_path =
   let out_c = open_out_gen [ Open_wronly; Open_creat ] 0o666 output_file_path in
   let csv_inc = Csv.of_channel ~has_header:true in_c in
   let csv_outc = Csv.to_channel out_c in
-  Csv.Rows.iter ~f:(process_row csv_outc) csv_inc
-
+  let _ = Csv.Rows.iter ~f:(process_row csv_outc) csv_inc in
+  Csv.close_in csv_inc;
+  Csv.close_out csv_outc;       (* Close and Flush all *)
+  let js_out_filename= Printf.sprintf "%s.js" output_file_path in
+  let csv_load_in = Csv.load_in (open_in output_file_path) in
+  let output_string = (Base.List.fold csv_load_in ~init:[] ~f:(fun acc row -> Printf.sprintf "\"%s\"" (Base.String.concat row) :: acc)) in
+  Core.Out_channel.write_all js_out_filename ~data:(Base.String.concat ~sep:"," output_string)
 
 let input_file_path =
   let doc = "csv file to parse" in

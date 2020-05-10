@@ -31,3 +31,4 @@
    - csv
    - csv-lwt
    - csvtool
+   - core

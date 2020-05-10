@@ -1,7 +1,7 @@
 (executable
  (name main)
  (libraries cohttp lwt cohttp-lwt-unix npi_response yojson re cmdliner csv
-   base)
+   base core)
  (preprocess
   (pps ppx_deriving.show)))
 
